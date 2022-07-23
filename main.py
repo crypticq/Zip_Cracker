@@ -2,14 +2,17 @@
 import zipfile
 import sys
 
-file = input("Enter Your File to crack ")
+
+password_file = input("Enter Your password file : ")
+
+
+file = input("Enter Your File to crack: ")
+
 in_Zip = file
 
-password = []
+password = [line.strip() for line in open(password_file)]
 
-with open("2020-200_most_used_passwords.txt" , 'r') as f:
-    for line in f:
-        password.append(line.strip())
+
 
 i = 0
 for passwords in password:

@@ -14,10 +14,10 @@ password = [line.strip() for line in open(password_file)]
 
 
 
-i = 0
-for passwords in password:
+
+for i , passwords in enumerate(password):
     try:
-        i+=1
+        
         z = zipfile.ZipFile(in_Zip, 'r')
         pas = bytes(passwords, encoding="utf-8")
         z.extractall(pwd=pas)
